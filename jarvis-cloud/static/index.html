@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Jarvis · Private voice assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+<main>
+  <header><span class="eyebrow">PERSONAL AI / CLOUD EDITION</span><h1>JARVIS<span> / 01</span></h1>
+  <p>Tamil. English. Your conversation.</p></header>
+  <form id="login">
+    <label for="key">Private access key</label>
+    <div class="row"><input id="key" type="password" required minlength="32" maxlength="256"
+      autocomplete="off" placeholder="Enter your secret key"><button id="connect">Connect</button></div>
+  </form>
+  <section class="console" aria-label="Voice controls">
+    <div id="orb" data-state="offline"><div></div></div>
+    <p id="status" role="status" aria-live="polite">Private connection required</p>
+    <div class="selectors">
+      <label>Speech recognition<select id="language"><option value="auto">Auto / mixed</option>
+        <option value="ta">Tamil</option><option value="en">English</option></select></label>
+      <label>Reply language<select id="reply"><option value="auto">Match me</option>
+        <option value="ta">Tamil</option><option value="en">English</option>
+        <option value="tanglish">Tanglish</option></select></label>
+    </div>
+    <div class="row controls"><button id="talk" disabled>Start speaking</button>
+      <button id="cancel" class="secondary" disabled>Cancel</button>
+      <button id="disconnect" class="secondary" disabled>Disconnect</button></div>
+    <p class="hint">Tap to speak. Stops after a pause or 19 seconds. Tap again to send.</p>
+    <form id="textForm" class="row"><input id="text" maxlength="1000"
+      placeholder="Or type in English, தமிழ், or Tanglish…" aria-label="Message" disabled>
+      <button id="send" disabled>Send</button></form>
+  </section>
+  <section id="chat" aria-label="Conversation"></section>
+  <footer>Audio is processed by cloud providers. History lasts for this connection only.</footer>
+</main>
+</body>
+</html>
